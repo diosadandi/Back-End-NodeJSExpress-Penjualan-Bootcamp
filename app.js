@@ -1,5 +1,4 @@
 const express = require("express");
-const cors = require('cors');
 const { BarangRouter } = require("./barang/barang.router");
 const { ROUTER_BASE_BARANG } = require("./barang/barang.config");
 const { MongoDBConnection } = require("./libs/lib.database");
@@ -13,7 +12,7 @@ const { Logging } = require("./libs/lib.logging");
 const cors = require("cors")
 
 const app = express();
-//test
+
 app.use(cors({
   origin: '*'
 }))
@@ -21,10 +20,6 @@ app.use(cors({
 MongoDBConnection();
 
 app.use(express.json());
-
-app.use(cors({
-  origin: '*'
-}));
 
 /**
  * Logging app
